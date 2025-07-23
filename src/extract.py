@@ -19,7 +19,7 @@ def create_csv(data, filename):
     data.to_csv(filename)
 
 def run():
-    portfolio = ['AAPL', 'GOOG', 'VTI', 'LUV']
+    portfolio = ['AAPL', 'GOOG', 'VTI', 'LUV', 'BTC-USD', 'NVDA', 'QQQ']
     today = date.today()
     thirty_days_ago = today - timedelta(days=30)
     stock_data = download_stock_data(portfolio, thirty_days_ago, today)

@@ -16,7 +16,8 @@ def load_to_sqlite(csv_path, db_path, table_name='stocks'):
     conn.close()
 
 def load_to_postgres(csv_path, db_name, user, password, host='localhost', port=5432, table_name='stocks'):
-    df = pd.read_csv(csv_path)
+    df = pd.read_csv(csv_path, parse_dates=['date'])
+    df['date'] = df['date'].dt.date
 
     engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{db_name}')
 
