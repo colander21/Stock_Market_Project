@@ -18,11 +18,11 @@ This project demonstrates a full ETL pipeline with:
 ## Project Architecture
 
 src/
-├── extract.py # Pulls data from yfinance
-├── transform.py # Cleans and enriches data with metrics
-├── load.py # Loads into SQLite and PostgreSQL
-├── queries.sql # SQL queries for analysis
-├── main.py # Runs full ETL pipeline
+- extract.py # Pulls data from yfinance
+- transform.py # Cleans and enriches data with metrics
+- load.py # Loads into SQLite and PostgreSQL
+- ueries.sql # SQL queries for analysis
+- main.py # Runs full ETL pipeline
 
 
 ---
@@ -60,6 +60,7 @@ WHERE date >= CURRENT_DATE - INTERVAL '10 days'
 GROUP BY ticker
 ORDER BY avg_volatility DESC;
 ```
+This query returns the average 10-day volatility for each stock, rounded to 2 decimal places, using only the most recent 10 days of data.
 
 
 # Tech Stack
