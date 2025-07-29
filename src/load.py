@@ -1,4 +1,5 @@
 import sqlite3
+from sqlalchemy import create_engine, Numeric, Date, Text, BigInteger
 import pandas as pd
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
@@ -25,7 +26,25 @@ def load_to_postgres(csv_path, db_name, user, password, port, host='localhost', 
 
     engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{db_name}')
 
-    df.to_sql(table_name, engine, if_exists='replace', index=False)
+    dtype_map = {
+        'date': Date(),
+        'ticker': Text(),
+        'open': Numeric(10, 4),
+        'high': Numeric(10, 4),
+        'low': Numeric(10, 4),
+        'close': Numeric(10, 4),
+        'volume': BigInteger(),
+        'intraday_change': Numeric(10, 4),
+        'daily_close_change': Numeric(10, 4),
+        'daily_percent_return': Numeric(6, 4),
+        'moving_avg_5_days': Numeric(10, 4),
+        'moving_avg_20_days': Numeric(10, 4),
+        'volatility_10_days': Numeric(10, 4),
+        'cumulative_returns': Numeric(10, 4),
+        'cumulative_percent_returns': Numeric(6, 4)
+    }
+
+    df.to_sql(table_name, engine, if_exists='replace', index=False, dtype=dtype_map)
 
 def run():
     file_path = "../data/cleaned_portfolio_data.csv"

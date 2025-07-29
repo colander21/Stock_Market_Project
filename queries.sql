@@ -10,7 +10,7 @@ FROM stocks
 ORDER BY ticker, date DESC;
 
 -- name: Volatility snapshot(last 10 days)
-SELECT ticker, ROUND(AVG(volatility_10_days)::numeric, 2) AS avg_volatility
+SELECT ticker, ROUND(AVG(volatility_10_days), 2) AS avg_volatility
 FROM stocks
 WHERE date >= CURRENT_DATE - INTERVAL '10 days'
 GROUP BY ticker

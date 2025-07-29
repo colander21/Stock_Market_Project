@@ -14,7 +14,7 @@ def run():
     db_host=os.getenv('DB_HOST')
     
     logging.info('Reading queries.sql')
-    with open('queries.sql') as f:
+    with open('../queries.sql') as f:
         sql_queries = f.read()
     
     query_blocks = re.findall(r"--\s*name:\s*(.*?)\n(.*?)(?=(--\s*name:|\Z))", sql_queries, re.DOTALL)
