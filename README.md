@@ -44,7 +44,7 @@ The following columns are added during the transformation step, grouped per `tic
 
 ## SQL Query Highlights
 
-Stored in [`queries.sql`](./src/queries.sql):
+Stored in [`queries.sql`](./queries.sql):
 
 - Highest-returning stocks by cumulative return
 - Most volatile tickers in the last 10 days
@@ -58,7 +58,8 @@ SELECT ticker, ROUND(AVG(volatility_10_days), 2) AS avg_volatility
 FROM stocks
 WHERE date >= CURRENT_DATE - INTERVAL '10 days'
 GROUP BY ticker
-ORDER BY avg_volatility DESC;```
+ORDER BY avg_volatility DESC;
+```
 
 
 # Tech Stack
