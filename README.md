@@ -1,10 +1,10 @@
-# 📈 Stock Market Data Pipeline Project
+# Stock Market Data Pipeline Project
 
 A complete end-to-end data engineering pipeline that extracts, transforms, and loads stock market data for technical analysis and signal detection. Built using Python, pandas, yfinance, and PostgreSQL/SQLite.
 
 ---
 
-## 🔧 Project Overview
+## Project Overview
 
 This project demonstrates a full ETL pipeline with:
 - **Data extraction** from Yahoo Finance using `yfinance`
@@ -15,9 +15,9 @@ This project demonstrates a full ETL pipeline with:
 
 ---
 
-## 🏗️ Project Architecture
+## Project Architecture
 
-📁 src/
+src/
 ├── extract.py # Pulls data from yfinance
 ├── transform.py # Cleans and enriches data with metrics
 ├── load.py # Loads into SQLite and PostgreSQL
@@ -27,7 +27,7 @@ This project demonstrates a full ETL pipeline with:
 
 ---
 
-## 📊 Features Engineered
+## Features Engineered
 
 The following columns are added during the transformation step, grouped per `ticker`:
 
@@ -42,7 +42,7 @@ The following columns are added during the transformation step, grouped per `tic
 
 ---
 
-## 🧪 SQL Query Highlights
+## SQL Query Highlights
 
 Stored in [`queries.sql`](./src/queries.sql):
 
@@ -58,7 +58,7 @@ SELECT ticker, ROUND(AVG(volatility_10_days), 2) AS avg_volatility
 FROM stocks
 WHERE date >= CURRENT_DATE - INTERVAL '10 days'
 GROUP BY ticker
-ORDER BY avg_volatility DESC;
+ORDER BY avg_volatility DESC;```
 
 
 # Tech Stack
