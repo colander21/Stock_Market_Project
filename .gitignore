@@ -2,3 +2,5 @@ data/*
 database/*
 logs/*
 __pycache__/
+.env
+visuals.py
