@@ -82,7 +82,7 @@ pip install -r requirements.txt
 
 3. Create Postgres database
 store credentials in .env file
-  - DB_NAME
+  \- DB_NAME
   - DB_PASSWORD
   - DB_USER
   - DB_HOST
@@ -92,13 +92,13 @@ store credentials in .env file
 python src/main.py
 
 # Possible Extensions
-Add signal-based backtesting (e.g. MA crossover strategies)
-Build a Streamlit dashboard to visualize trends and performance
-Deploy to cloud infrastructure (PostgreSQL on AWS, BigQuery, etc.)
+- Add signal-based backtesting (e.g. MA crossover strategies)
+- Build a Streamlit dashboard to visualize trends and performance
+- Deploy to cloud infrastructure (PostgreSQL on AWS, BigQuery, etc.)
 
 
 # What I Learned
-How to build a clean ETL pipeline with modular Python code
-Feature engineering for financial time-series data
-Managing data workflows with real-world databases
-Writing and organizing reusable SQL for analytics
+- How to build a clean ETL pipeline with modular Python code
+- Feature engineering for financial time-series data
+- Managing data workflows with real-world databases
+- Writing and organizing reusable SQL for analytics
