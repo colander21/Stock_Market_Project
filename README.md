@@ -82,11 +82,11 @@ pip install -r requirements.txt
 
 3. Create Postgres database
 store credentials in .env file
-  \- DB_NAME
-  - DB_PASSWORD
-  - DB_USER
-  - DB_HOST
-  - DB_PORT
+- DB_NAME
+- DB_PASSWORD
+- DB_USER
+- DB_HOST
+- DB_PORT
   
 4. Run the pipeline
 python src/main.py
